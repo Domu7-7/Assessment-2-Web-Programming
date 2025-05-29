@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenless Zone Zero</title>
+  <link rel="stylesheet" href="SA2Webpage.css">
+
+</head>
+<body>
+
+  <div class="fullscreen-bg"></div>
+
+  <header>
+    <div class="logo-nav-container">
+      <img src="zzzlogo.png" alt="Zenless Zone Zero Logo" class="logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="SA2Webpage.html">Homepage</a></li>
+        <li><a href="SA2Characters.html">New Characters</a></li>
+        <li><a href="SA2Events.html">Events</a></li>
+        <li><a href="SA2Gameplay.html">Gameplay</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+	<h2>Zenless Zone Zero Season 2 Begins</h2>
+    <!-- Animated Event Image -->
+    <img src="zzzseasontwobanner.png" alt="Zenless Zone Zero Event Banner" class="animated-image" id="eventImage">
+	<h2>Anniversary Rewards: Free S-rank Agent and S-rank W-Engine</h2>
+	<img src="zzzanniversaryrewards.png" alt="Anniversary Rewards" class="animated-image" id="eventImage">
+	<h2>New Characters</h2>
+	<img src="zzznewcharacters.png" alt="New Characters" class="animated-image" id="eventImage">
+	<h2>New Outfits</h2>
+	<img src="zzznewoutfits.png" alt="New Outfits" class="animated-image" id="eventImage">
+	
+  </main>
+
+<!-- Sticky Bottom Navigation Bar with Info & Download Button -->
+<!-- Bottom Navigation Bar -->
+<nav class="bottom-nav" id="bottomNav">
+  <div class="info-text">
+    <h3>Next Stop: Waifei Peninsula</h3>
+    <p>Join the version 2.0 Log-in to claim an S-rank Agent!</p>
+  </div>
+  <a href="https://zenless.hoyoverse.com/" target="_blank" rel="noopener noreferrer" class="button">
+    Download Now
+  </a>
+
+  <!-- Toggle Button INSIDE nav -->
+  <button id="toggleButton" class="toggle-button">▲</button>
+</nav>
+
+<button id="toggleButton" class="toggle-button">▲</button>
+
+  
+
+<!-- Button to go to New Agents page -->
+<div class="new-agents-button-container">
+  <a href="SA2Characters.html" class="new-agents-button">New Agents ></a>
+</div>
+
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Zenless Zone Zero Fan Site | Designed for educational purposes</p>
+</footer>
+
+
+  <!-- JavaScript to animate the image -->
+<script>
+  // Bottom nav toggle
+  const nav = document.getElementById("bottomNav");
+  const btn = document.getElementById("toggleButton");
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("hidden");
+    btn.textContent = nav.classList.contains("hidden") ? "▼" : "▲";
+  });
+
+  // Fade-in animation on scroll
+  const images = document.querySelectorAll('.animated-image');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Optionally unobserve to trigger animation only once
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  images.forEach(image => {
+    observer.observe(image);
+  });
+  
+
+</script>
+
+</body>
+</html>

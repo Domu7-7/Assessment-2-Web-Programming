@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenless Zone Zero - Gameplay</title>
+  <link rel="stylesheet" href="SA2Webpage.css">
+</head>
+<body>
+
+  <div class="fullscreen-bg"></div>
+
+  <header>
+    <img src="zzzlogo.png" alt="Zenless Zone Zero Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="SA2Webpage.html">Homepage</a></li>
+        <li><a href="SA2Characters.html">New Characters</a></li>
+        <li><a href="SA2Events.html">Events</a></li>
+        <li><a href="SA2Gameplay.html">Gameplay</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Gameplay</h2>
+
+<!-- YouTube Video Embed -->
+<div class="video-container">
+<iframe width="720" height="405"
+  src="https://www.youtube.com/embed/yDZm1E1jYXw?si=aUJj80wRBMpmuzSC" 
+  title="Zenless Zone Zero Gameplay"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+
+    <h2>Features</h2>
+</div>
+
+<div class="slider">
+  <div class="slider-track">
+    <div class="slide">
+      <img src="zzzfeatures1.png" alt="Image 1">
+      <div class="caption">Various Factions, Entwined Stories</div>
+    </div>
+    <div class="slide">
+      <img src="zzzfeatures2.png" alt="Image 2">
+      <div class="caption">Dual Identities, A Single Adventure</div>
+    </div>
+    <div class="slide">
+      <img src="zzzfeatures3.png" alt="Image 3">
+      <div class="caption">Build Your Squad, Fight Fast-Paced Battles</div>
+    </div>
+    <div class="slide">
+      <img src="zzzfeatures4.png" alt="Image 4">
+      <div class="caption">Unique Style and Music, Immersive Experience</div>
+    </div>
+  </div>
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</div>
+
+
+  </main>
+  
+  <nav class="bottom-nav" id="bottomNav">
+  <div class="info-text">
+    <h3>Next Stop: Waifei Peninsula</h3>
+    <p>Join the version 2.0 Log-in to claim an S-rank Agent!</p>
+  </div>
+  <a href="https://zenless.hoyoverse.com/" target="_blank" rel="noopener noreferrer" class="button">
+    Download Now
+  </a>
+
+  <!-- Toggle Button INSIDE nav -->
+  <button id="toggleButton" class="toggle-button">▲</button>
+</nav>
+
+<button id="toggleButton" class="toggle-button">▲</button>
+
+  <footer>
+    <p>&copy; 2025 Zenless Zone Zero Fan Site | Designed for educational purposes</p>
+  </footer>
+
+  <script>
+  // Bottom nav toggle
+  const nav = document.getElementById("bottomNav");
+  const btn = document.getElementById("toggleButton");
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("hidden");
+    btn.textContent = nav.classList.contains("hidden") ? "▼" : "▲";
+  });
+   const track = document.querySelector('.slider-track');
+  const slides = document.querySelectorAll('.slide');
+  let currentIndex = 0;
+
+  function updateSlidePosition() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  document.querySelector('.next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlidePosition();
+  });
+
+  document.querySelector('.prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlidePosition();
+  });
+
+  // Initial positioning
+  updateSlidePosition();
+  </script>
+
+</body>
+</html>

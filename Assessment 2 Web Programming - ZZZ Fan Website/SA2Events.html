@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenless Zone Zero</title>
+  <link rel="stylesheet" href="SA2Webpage.css">
+
+</head>
+<body>
+
+  <div class="fullscreen-bg"></div>
+
+  <header>
+    <div class="logo-nav-container">
+      <img src="zzzlogo.png" alt="Zenless Zone Zero Logo" class="logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="SA2Webpage.html">Homepage</a></li>
+        <li><a href="SA2Characters.html">New Characters</a></li>
+        <li><a href="SA2Events.html">Events</a></li>
+        <li><a href="SA2Gameplay.html">Gameplay</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+  <h2>Ellen's New Mechanics Guide </h2>
+  <div class="image-button-wrapper">
+    <img src="zzzevents0.png" alt="First Anniversary Replay" class="animated-image" id="eventImage1">
+    <a href="https://zenless.hoyoverse.com/en-us/news/156236" target="_blank" class="image-button">Learn More</a>
+  </div>
+  
+  <h2>First Anniversary Replay - Hollow Wandering 2024 | Zenless Zone Zero </h2>
+  <div class="image-button-wrapper">
+    <img src="zzzevents1.png" alt="First Anniversary Replay" class="animated-image" id="eventImage1">
+    <a href="https://youtu.be/pwYb5RSC0HY?si=EubqVH354rWbv4Qm" target="_blank" class="image-button">Watch PV</a>
+  </div>
+
+  <h2>Zenless Zone Zero launches on XBox along with Version 2.0</h2>
+  <div class="image-button-wrapper">
+    <img src="zzzevents2.png" alt="ZZZ Xbox" class="animated-image" id="eventImage2">
+    <a href="https://hoyo.link/HvjOdJg3s" target="_blank" class="image-button">Learn More</a>
+  </div>
+
+  <h2>Operation Yum | Global Deliciousness Collab</h2>
+  <div class="image-button-wrapper">
+    <img src="zzzevents3.png" alt="Operation Yum" class="animated-image" id="eventImage3">
+    <a href="https://zenless.hoyoverse.com/en-us/news/156058" target="_blank" class="image-button">Learn More</a>
+  </div>
+
+  <h2>Pre-registration Rewards</h2>
+  <div class="image-button-wrapper">
+    <img src="zzzevents4.png" alt="Pre-registration Rewards" class="animated-image" id="eventImage4">
+    <a href="https://hoyo.link/3u1fjTF8O" target="_blank" class="image-button">Pre-register Now</a>
+  </div>
+</main>
+
+
+<!-- Sticky Bottom Navigation Bar with Info & Download Button -->
+<!-- Bottom Navigation Bar -->
+<nav class="bottom-nav" id="bottomNav">
+  <div class="info-text">
+    <h3>Next Stop: Waifei Peninsula</h3>
+    <p>Join the version 2.0 Log-in to claim an S-rank Agent!</p>
+  </div>
+  <a href="https://zenless.hoyoverse.com/" target="_blank" rel="noopener noreferrer" class="button">
+    Download Now
+  </a>
+
+  <!-- Toggle Button INSIDE nav -->
+  <button id="toggleButton" class="toggle-button">▲</button>
+</nav>
+
+<button id="toggleButton" class="toggle-button">▲</button>
+
+  
+
+<!-- Button to go to New Agents page -->
+<div class="new-agents-button-container">
+  <a href="SA2Gameplay.html" class="new-agents-button">Gameplay ></a>
+</div>
+
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Zenless Zone Zero Fan Site | Designed for educational purposes</p>
+</footer>
+
+
+  <!-- JavaScript to animate the image -->
+<script>
+  // Bottom nav toggle
+  const nav = document.getElementById("bottomNav");
+  const btn = document.getElementById("toggleButton");
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("hidden");
+    btn.textContent = nav.classList.contains("hidden") ? "▼" : "▲";
+  });
+
+  // Fade-in animation on scroll
+  const images = document.querySelectorAll('.animated-image');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Optionally unobserve to trigger animation only once
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  images.forEach(image => {
+    observer.observe(image);
+  });
+  
+
+</script>
+
+</body>
+</html>

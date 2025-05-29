@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenless Zone Zero - New Characters</title>
+  <link rel="stylesheet" href="SA2Webpage.css" />
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="fullscreen-bg"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-nav-container">
+        <img src="zzzlogo.png" alt="Zenless Zone Zero Logo" class="logo">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="SA2Webpage.html">Homepage</a></li>
+        <li><a href="SA2Characters.html">New Characters</a></li>
+        <li><a href="SA2Events.html">Events</a></li>
+        <li><a href="SA2Gameplay.html">Gameplay</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <h2>New Agents</h2>
+
+    <div class="character-grid">
+      <div class="character-card">
+        <img src="zzzyixuan.png" alt="New Character 1">
+        <h3>Yi Xuan</h3>
+		<h4>Rupture - Auric Ink</h4>
+        <p>"Once you enter these gates, leave your worldly concerns and formalities at the front of the mountain.</p>
+      </div>
+
+      <div class="character-card">
+        <img src="zzzjufufu.png" alt="New Character 2">
+        <h3>Ju Fufu</h3>
+		<h4>Stun - Fire</h4>
+        <p>"Fierce tigers prowl Yunkui Summit, where righteous heroes display their might!"</p>
+      </div>
+	  
+	   <div class="character-card">
+        <img src="zzzpanyinhu.png" alt="New Character 3">
+        <h3>Pan Yinhu</h3>
+		<h4>Defense - Physical</h4>
+        <p>"Even plants know to feed from the soil and drink dew, there's no way we can practice on an empty stomach!"</p>
+      </div>
+
+      <!-- Add more character cards as needed -->
+    </div>
+  </main>
+  
+  <nav class="bottom-nav" id="bottomNav">
+  <div class="info-text">
+    <h3>Next Stop: Waifei Peninsula</h3>
+    <p>Join the version 2.0 Log-in to claim an S-rank Agent!</p>
+  </div>
+  <a href="https://zenless.hoyoverse.com/" target="_blank" rel="noopener noreferrer" class="button">
+    Download Now
+  </a>
+
+  <!-- Toggle Button INSIDE nav -->
+  <button id="toggleButton" class="toggle-button">▲</button>
+</nav>
+
+<button id="toggleButton" class="toggle-button">▲</button>
+
+  
+  <div class="new-agents-button-container">
+  <a href="SA2Events.html" class="new-agents-button">New Events ></a>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Zenless Zone Zero Fan Site | Designed for educational purposes</p>
+  </footer>
+  
+  <script>
+  // Bottom nav toggle
+  const nav = document.getElementById("bottomNav");
+  const btn = document.getElementById("toggleButton");
+
+  btn.addEventListener("click", () => {
+    nav.classList.toggle("hidden");
+    btn.textContent = nav.classList.contains("hidden") ? "▼" : "▲";
+  });
+
+  // Fade-in animation on scroll
+  const images = document.querySelectorAll('.animated-image');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Optionally unobserve to trigger animation only once
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  images.forEach(image => {
+    observer.observe(image);
+  });
+  
+
+</script>
+  
+
+</body>
+</html>
